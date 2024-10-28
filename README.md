@@ -57,7 +57,86 @@ Remove all addons
 
 select create cluster
 
+create another role for node groups & bastion
+![image](https://github.com/user-attachments/assets/7302a12c-57e0-4f3a-b0c6-fbf56e651b2b)
 
+
+wait for 10-15 mins
+once the cluster is up & running  select compute tab and select add node group
+
+![image](https://github.com/user-attachments/assets/5606f7ce-ce69-4fc8-bfc4-4fba8b7377dd)
+
+enter the nodegroup name & select the role created in the above step
+![image](https://github.com/user-attachments/assets/9c965608-ae20-47d2-8cfa-f3a7ca0f0d66)
+
+leave rest of the feilds as same and select next & select AMI type, instance type, node group scaling config
+![image](https://github.com/user-attachments/assets/52dd28ba-5f4c-430e-9c43-80d17fa8bb7e)
+
+![image](https://github.com/user-attachments/assets/f208bf27-4c5c-49fe-ac5c-bdd75a156c6b)
+
+select next
+
+![image](https://github.com/user-attachments/assets/896ac245-08bf-40bc-851e-43d6aaacf938)
+
+select next > create
+![image](https://github.com/user-attachments/assets/077fbb1c-5041-414e-be62-218af2991978)
+
+##################################################################################################################
+Bastion setup to access cluster
+
+spinup a virtual machine (ec2) & dont forget to select the instance profile which we used for node group  & rest all configurations will be as per your requirement
+
+![image](https://github.com/user-attachments/assets/6adb7913-5d68-487b-a533-e32d91fd14b0)
+
+once vm is up & running  login to the vm & install following packages
+
+aws cli:
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+./aws/install -i /usr/local/aws-cli -b /usr/local/bin
+aws --version
+aws eks --region ap-southeast-2 update-kube... by Hemanth Katkoju
+
+
+helm:
+
+wget https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz
+ 
+tar -zxvf helm-v3.8.0-linux-amd64.tar.gz
+ 
+mv linux-amd64/helm /usr/local/bin/helm
+ 
+ln -s /usr/local/bin/helm /bin/helm
+
+kubectl:
+
+cat << EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://pkgs.k8s.io/core:/stable:/v1.28/rpm/
+enabled=1
+gpgcheck=1
+gpgkey=https://pkgs.k8s.io/core:/stable:/v1.28/rpm/repodata/repomd.xml.key
+EOF
+
+yum install kubectl -y
+
+nowuse the command to connect to the eks cluster from your bastion:
+
+aws eks --region <region-where-your-cluster-is-configured> update-kubeconfig --name <your-cluster-name>
+
+now you can use kubectl commands like
+
+kubectl get nodes, kubectl get namesapace, kubectl get po
+
+if you are not able to list any resources --> configure aws in your bastion using below command
+
+aws configure
+
+enter the access key & secret key of the account
+
+and now you will be able to list all the objects in your cluster  
 
 
 
