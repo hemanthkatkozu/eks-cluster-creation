@@ -40,14 +40,22 @@ Add tags as per requirement and select next
 ![image](https://github.com/user-attachments/assets/6d677165-d244-4c7b-bb77-991c0ea59643)
 
 select the default security group & security group should contain following rules --> ssh 22, http 80, https 443
-![image](https://github.com/user-attachments/assets/be468ca7-32a7-4ad5-b212-a1edc4ea736c)
+![image](https://github.com/user-attachments/assets/8cd32f3b-df13-4c6b-ac32-f5769d630f2d)
+
+![image](https://github.com/user-attachments/assets/337b86a5-ff0d-40a8-a88c-49e9b349a9ea)
+
+![image](https://github.com/user-attachments/assets/514032c0-9173-4638-a5a5-bf863d7ec07c)
+
+![image](https://github.com/user-attachments/assets/2d90c3cc-eb6b-453b-9f48-6e3563fb7e07)
+
+![image](https://github.com/user-attachments/assets/498e07bc-15b1-4106-86e7-318a94e640d4)
+
+Remove all addons
+
+![image](https://github.com/user-attachments/assets/97c6d245-a96a-4afc-ad76-9ab99f6ba6bb)
 
 
-
-
-
-
-
+select create cluster
 
 
 
