@@ -26,4 +26,34 @@ step 4: attach additional policies required for the role
 
 ![image](https://github.com/user-attachments/assets/b71abbee-f46d-40f4-8316-e4205263a092)
 
+step5: select the role created
+
+![image](https://github.com/user-attachments/assets/a8dd0b32-8c0a-4559-9199-d59b6542f4bc)
+
+![image](https://github.com/user-attachments/assets/8b275a51-762d-4f06-a42c-9b3b3c1581b5)
+
+![image](https://github.com/user-attachments/assets/7165b8b9-daab-482e-92b0-445c243cf162)
+
+
+Add tags as per requirement and select next
+
+![image](https://github.com/user-attachments/assets/6d677165-d244-4c7b-bb77-991c0ea59643)
+
+select the default security group & security group should contain following rules --> ssh 22, http 80, https 443
+![image](https://github.com/user-attachments/assets/be468ca7-32a7-4ad5-b212-a1edc4ea736c)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
